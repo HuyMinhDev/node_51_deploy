@@ -1,0 +1,69 @@
+doc Dockerfile: https://docs.docker.com/reference/
+
+## IMAGE
+# Build image
+    docker image build -t img-be_cyber_community .
+
+# Show tất cả image đang có
+    docker image list
+
+
+
+# Xóa image
+    docker image remove id_ten_image
+    docker image remove a86b9f9887c0
+
+# Công cụ phân tích image dive
+brew install dive       # macOS
+sudo apt install dive   # Linux
+choco install dive      # Windows
+
+## CONTAINER
+# show tất cả container
+    docker container list
+    docker container ls
+     -a : show tất cả các container kể cả container đang ofline
+        docker container list -a
+        docker container ls -a
+        docker ps
+
+# tạo/chạy container
+    docker container run --env-file .env --name con-be_cyber_community -p 3070:3069 -d img-be_cyber_community
+    --name: đặt tên cho container
+    -p: quy định cổng mà fe sẽ kết nối 
+    -d: chạy ngầm, ko chiếm dụng terminal
+    TÊN IMAGE LUÔN ĐỂ CUỐI CÙNG
+    kiểm tra xem image đã có trong máy hay chưa
+        _ có: Ưu tiên dùng trong máy trước
+        _ chưa: tự lên docker hub tìm và tải về
+    --env-file: đọc dử liệu bên trong file env
+
+# Kiểm tra log của container (source)
+    docker logs id_ten_container
+    docker logs -f id_ten_container
+    -f: bắt dính cập nhật log mới nhất (chỉ khi container start)
+
+# Xóa container
+    docker container remove id_ten_container
+
+## Docker compose
+    start 
+        docker compose up -d
+    stop
+        docker compose down
+
+# Kết hợp
+    docker image remove img-be_cyber_community \\
+     docker image build -t img-be_cyber_community .
+
+     docker image build -t minhhuy2410/img-be_cyber_community:latest .
+
+# Kết hợp
+    docker container remove img-be_cyber_community \\
+    docker container run --env-file .env --name con-be_cyber_community -p 3070:3069 -d img-be_cyber_community
+
+docker compose up -d
+
+docker ps -a
+
+docker push minhhuy2410/img-be_cyber_community:latest
