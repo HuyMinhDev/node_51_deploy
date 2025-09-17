@@ -83,3 +83,8 @@ khi chạy kết nối runner với server => không được kẹp sudo su
 chạy online runner github
 sudo ./svc.sh install
 sudo ./svc.sh start
+
+ghi file bằng nano
+    nano docker-compose.yml
+    ctrl + O | Enter: save file
+    ctrl + X: thoát giao diện chỉnh sửa
