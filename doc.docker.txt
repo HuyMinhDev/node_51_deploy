@@ -67,3 +67,19 @@ docker compose up -d
 docker ps -a
 
 docker push minhhuy2410/img-be_cyber_community:latest
+
+## lệnh ubuntu hay dùng
+
+ls -la: show tất cả fold
+
+mkdir: tạo folder
+rmdir -rf: xóa folder
+touch: tạo file
+rm: xoá file
+cd: di chuyển tới folder
+
+khi chạy kết nối runner với server => không được kẹp sudo su
+
+chạy online runner github
+sudo ./svc.sh install
+sudo ./svc.sh start
